@@ -5,6 +5,11 @@ plugins {
     id("org.jetbrains.kotlin.plugin.jpa") version "1.4.30"
     id("com.github.johnrengelman.shadow") version "6.1.0"
     id("io.micronaut.application") version "1.4.2"
+    id ("org.jetbrains.kotlin.plugin.noarg") version "1.5.0-M2"
+}
+
+allOpen{
+    annotation("io.micronaut.http.annotation.Controller")
 }
 
 version = "0.1"
