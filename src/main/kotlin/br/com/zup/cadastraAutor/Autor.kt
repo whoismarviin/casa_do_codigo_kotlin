@@ -1,6 +1,7 @@
 package br.com.zup.cadastraAutor
 
 import java.time.LocalDateTime
+import javax.persistence.Embedded
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.Id
@@ -9,7 +10,8 @@ import javax.persistence.Id
 class Autor(
     val nome: String?,
     val email: String?,
-    var descricao: String?
+    var descricao: String,
+    @field:Embedded val endereco:Endereco
 ) {
     @Id
     @GeneratedValue

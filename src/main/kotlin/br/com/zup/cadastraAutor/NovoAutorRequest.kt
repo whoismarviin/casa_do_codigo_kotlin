@@ -13,8 +13,9 @@ data class NovoAutorRequest(
     @field:NotBlank val cep:String,
     @field:NotBlank val numero: String
 ) {
-    fun paraAutor(body: EnderecoResponse):Autor{
-        return Autor(nome,email,descricao)
+    fun paraAutor(enderecoResponse: EnderecoResponse):Autor{
+        val endereco = Endereco(enderecoResponse,numero,cep)
+        return Autor(nome,email,descricao,endereco)
     }
 }
 
